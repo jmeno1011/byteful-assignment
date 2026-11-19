@@ -1,0 +1,41 @@
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-brand img {
+  display: block;
+  width: 128px;
+  height: 32px;
+  object-fit: contain;
+}
+
+@media (max-width: 1050px) {
+  .header-inner {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 650px) {
+  .header-inner {
+    padding: 0 22px;
+    min-height: 72px;
+  }
+}

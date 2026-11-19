@@ -1,0 +1,302 @@
+.configuration {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 10px #0d112603;
+  overflow: visible;
+}
+
+.form-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  padding: 21px 25px;
+  color: var(--muted);
+}
+
+.form-heading h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.form-heading > span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.form-section {
+  padding: 24px 25px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 21px;
+}
+
+.step-icon {
+  width: 35px;
+  height: 35px;
+  background: #f3f1ff;
+  border: 1px solid #eeebfc;
+  color: #7666d7;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.section-heading h3 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.section-heading p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.field + .field {
+  margin-top: 17px;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input input {
+  padding-right: 43px;
+}
+
+.password-input button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 33px;
+  width: 33px;
+}
+
+.protocols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.session-field {
+  margin-top: 20px;
+}
+
+.session-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.quantity-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.quantity-row label {
+  margin-bottom: 3px;
+}
+
+.quantity-row > input {
+  max-width: 105px;
+}
+
+.validation-error {
+  font-size: 12px;
+  color: #ba3b4b;
+  margin-top: 9px;
+}
+
+.targeting .section-heading {
+  margin-bottom: 23px;
+}
+
+.section-heading > :global(.text-button) {
+  margin-left: auto;
+}
+
+.generate-area {
+  padding: 22px 25px 19px;
+  background: #fcfcfe;
+  border-radius: 0 0 12px 12px;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  height: 48px;
+  background: var(--purple);
+  border: 1px solid #5141e9;
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 3px 6px #5547eb22;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: #4636d9;
+  box-shadow: 0 4px 12px #5547eb33;
+}
+
+.primary-button:disabled {
+  opacity: 1;
+  background: #eeecf9;
+  color: var(--muted);
+  border-color: #e9e6f5;
+  box-shadow: none;
+}
+
+.primary-button kbd {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  background: #ffffff1c;
+  margin-left: auto;
+}
+
+.primary-button > svg {
+  margin-left: 3px;
+}
+
+.generate-area > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #17392d;
+  background: #edf8f1;
+  border: 1px solid #cfe6d8;
+  border-radius: 7px;
+  margin-top: 14px;
+}
+
+.generate-area > p svg {
+  flex-shrink: 0;
+  color: #286747;
+}
+
+@media (min-width: 1600px) {
+  .form-section {
+    padding: 26px 28px;
+  }
+
+  .form-heading {
+    padding: 21px 28px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .form-section,
+    .form-heading {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .protocols {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .form-heading > span {
+    display: none;
+  }
+}
+
+@media (max-width: 790px) {
+  .form-section {
+    padding: 25px;
+  }
+
+  .form-heading {
+    padding: 21px 25px;
+  }
+
+  .form-heading > span {
+    display: block;
+  }
+
+  .protocols label {
+    font-size: 12px;
+  }
+}
+
+.primary-button {
+  font-size: 0.875rem;
+}
+
+.section-heading p,
+.session-options small {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 400px) {
+  .form-section {
+    padding: 22px 18px;
+  }
+
+  .form-heading {
+    padding: 20px 18px;
+  }
+
+  .form-heading > span {
+    display: none;
+  }
+
+  .generate-area {
+    padding: 20px 18px;
+  }
+
+  .primary-button kbd {
+    font-size: 9px;
+  }
+
+  .session-options label {
+    padding: 10px;
+  }
+
+  .protocols label {
+    font-size: 10px;
+  }
+}
+
+.configuration {
+  scroll-margin-top: 24px;
+}
+
+.form-validation-summary {
+  margin: 20px 25px 0;
+  padding: 12px 14px;
+  border: 1px solid #f3d3d8;
+  border-radius: 6px;
+  background: #fff1f2;
+  color: #ad3e4e;
+  font-size: 13px;
+  line-height: 1.6;
+}

@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+Project_Content.md
+.DS_Store
+coverage/
+*.tsbuildinfo
+
+# Local documentation and verification scripts
+/scripts/
+/docs/
+
+# Local AI agent instructions
+/AGENTS.md
