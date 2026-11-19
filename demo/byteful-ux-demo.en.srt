@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:02,800
+I designed the form to guide users
+before they create a proxy list.
+
+2
+00:00:02,800 --> 00:00:07,000
+The app checks required fields
+before sending a generation request.
+
+3
+00:00:07,000 --> 00:00:12,500
+If the password is missing,
+a clear message explains what to enter.
+
+4
+00:00:12,500 --> 00:00:18,800
+If the user ID is missing,
+the page moves back to that field.
+
+5
+00:00:18,800 --> 00:00:24,500
+Connection at a glance updates
+as the user changes the settings.
+
+6
+00:00:24,500 --> 00:00:30,500
+Users can check the protocol, session, quantity
+and location before generation.
+
+7
+00:00:30,500 --> 00:00:34,625
+After success, the page moves to Your proxy list
+and confirms completion.
+
+8
+00:00:34,625 --> 00:00:42,625
+I mask the middle of the password in the preview.
+This helps reduce accidental exposure on screen.
+
+9
+00:00:42,625 --> 00:00:45,625
+Generated configuration shows
+the settings used for this list.

@@ -1,5 +1,7 @@
 # Byteful · Residential Proxy Generator
 
+[Demo videos and development process](demo/README.md)
+
 ## Instructions to run the app
 
 ### 1. Download the GitHub repository
@@ -149,6 +151,15 @@ The structure below lists the source, assets, tests and configuration included i
 
 ```text
 assignment_docs/                   Original assignment and reference screenshot
+demo/
+  README.md                       Demo guide and development process
+  development-process.md          Standalone development process document
+  byteful-proxy-demo.mp4          Proxy generation walkthrough
+  byteful-ux-demo-subtitled.mp4   UX walkthrough with English subtitles and AI narration
+  byteful-ux-demo-subtitled-silent.mp4  UX walkthrough without audio
+  byteful-ux-demo.en.srt          English subtitle file
+  preview.jpg                     Proxy generation video preview
+  ux-preview.jpg                  UX video preview
 public/
   brand/byteful.svg                Local Byteful logo
 src/
