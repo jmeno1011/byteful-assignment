@@ -2,6 +2,8 @@
 
 [Demo videos and development process](demo/README.md)
 
+View the animated previews in the demo guide, or follow the [download instructions](demo/README.md#how-to-download-and-watch-the-videos) for full MP4 playback and English narration.
+
 ## Instructions to run the app
 
 ### 1. Download the GitHub repository
@@ -158,6 +160,8 @@ demo/
   byteful-ux-demo-subtitled.mp4   UX walkthrough with English subtitles and AI narration
   byteful-ux-demo-subtitled-silent.mp4  UX walkthrough without audio
   byteful-ux-demo.en.srt          English subtitle file
+  byteful-proxy-demo.gif          Animated proxy generation preview
+  byteful-ux-demo.gif             Animated UX walkthrough preview
   preview.jpg                     Proxy generation video preview
   ux-preview.jpg                  UX video preview
 public/

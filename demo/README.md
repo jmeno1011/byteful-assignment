@@ -1,10 +1,22 @@
 # Byteful Demo
 
+## How to download and watch the videos
+
+The animated GIF previews below show the demos directly in this README. Click a preview or a download link to get the full MP4. GIF previews have no sound; the UX MP4 includes English subtitles and AI narration.
+
+For full-quality playback with audio where available:
+
+1. Click a video link or preview image below to open the MP4 file page.
+2. Click **Download raw file** (the download icon). If GitHub shows a **View raw** link instead, open it and use your browser's download or save option.
+3. Open the downloaded MP4 file with your video player.
+
+You can also download the full repository using **Code → Download ZIP**, extract it, and open the MP4 files in the `demo` folder.
+
 ## 1. Proxy generation walkthrough
 
-[![Proxy generation preview](preview.jpg)](byteful-proxy-demo.mp4)
+[![Animated proxy generation demo](byteful-proxy-demo.gif)](byteful-proxy-demo.mp4)
 
-[Watch or download the proxy generation demo](byteful-proxy-demo.mp4) · About 31 seconds · No audio or subtitles
+[Download the proxy generation video (MP4)](byteful-proxy-demo.mp4) · About 31 seconds · No audio or subtitles
 
 The demo enters the following sample values, selects a location using the live lookup API, and generates five proxy strings locally.
 
@@ -20,9 +32,9 @@ The demo enters the following sample values, selects a location using the live l
 
 ## 2. UX decisions and implementation reasons
 
-[![UX walkthrough preview](ux-preview.jpg)](byteful-ux-demo-subtitled.mp4)
+[![Animated UX walkthrough with English subtitles](byteful-ux-demo.gif)](byteful-ux-demo-subtitled.mp4)
 
-[Watch or download the UX demo](byteful-ux-demo-subtitled.mp4) · About 46 seconds · English subtitles and AI-generated English narration
+[Download the UX video with English narration (MP4)](byteful-ux-demo-subtitled.mp4) · About 46 seconds · English subtitles and AI-generated English narration
 
 The video shows:
 
