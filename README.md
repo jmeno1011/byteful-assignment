@@ -288,28 +288,30 @@ src/
 
 ## Decisions and trade-offs
 
-### Small, explicit layers
+### ZOD
 
-- The generator page composes a form and result panel. The residential hook owns form state and generation/export actions; credentials, connection options and location targeting are separate UI sections.
-- Browser API functions live with their domain. Only HTTP transport and response errors are shared; the browser location cache stays with the location API.
-- CSS Modules scope component styles and responsive rules. Global CSS contains design tokens, resets, base controls and a few shared utilities.
+Zod is the single source of request validation. An additional target such as state/ZIP would add an optional schema field, an ordered username segment and a lookup/control, without putting network calls inside generation.
 
-- Zod is the single source of request validation. An additional target such as state/ZIP would add an optional schema field, an ordered username segment and a lookup/control, without putting network calls inside generation.
-- Before sending a request, the frontend uses Zod to check data types and validation rules, preventing unnecessary API calls for invalid input. The server validates the request again.
+Before sending a request, the frontend uses Zod to check data types and validation rules, preventing unnecessary API calls for invalid input. The server validates the request again.
 
-### Bounded caches
+### Cache policy
 
-- The browser query cache lasts 60 seconds and holds up to 100 entries. The server country cache lasts one hour; city/ASN caches last five minutes, with a shared 300-entry limit and in-flight deduplication. Failures are not cached.
-- The Generate proxies button is disabled for at least 300 ms to prevent double clicks and rapid repeated submissions. An immediate submission lock blocks duplicate requests before the disabled state renders. Requests taking longer than 300 ms remain locked until completion.
+- The browser lookup cache lasts 60 seconds and holds up to 100 entries.
+- The server country cache lasts one hour. City and ASN caches last five minutes, with a shared limit of 300 entries.
+- Cache entries are reused until they expire. Data changes are not detected automatically, and failed requests are not cached.
 
-### API rate limit
+### Request control
 
-- Debounce and caching reduce lookup traffic; abort prevents stale search responses from updating the UI, but does not undo an upstream request already sent. A 429 response is shown explicitly rather than silently retried.
-- This demo does not enforce a distributed quota against Byteful's account-wide 20 requests/second limit. Before public hosting, add application authentication, shared per-user rate limiting and an account-wide limiter for outbound Byteful requests.
-- As a future service policy, request rates could differ by subscription tier, similar to the resource limits seen in services such as Supabase and cloud platforms. Per-tier limits would still need to fit within the shared upstream account quota. This subscription-based policy is not implemented in the demo.
+- Lookup searches use a 300 ms debounce to reduce requests while users type. The server also shares one in-flight request when the same lookup is requested at the same time.
+- Abort prevents outdated search results from updating the UI. It does not undo a Byteful request that the server has already sent.
+- Proxy generation uses an immediate submission lock and disables the button for at least 300 ms to prevent duplicate submissions. If the request takes longer, the button stays disabled until it finishes. This is a UI safeguard, not a server rate limit.
+
+### API rate limits and future hosting
+
+- A Byteful 429 response is shown to the user instead of being retried automatically.
+- A future service could apply different request limits by subscription tier. These limits must still fit within the shared Byteful account quota. Subscription-based limits are not implemented in this demo.
 
 ### No persistence
 
-- There is no database, analytics, persistent credential storage, saved presets or simulated account/billing functionality. Credentials and generated lines are held in component memory rather than persisted across reloads. Clearing a result removes its generated data while retaining the form inputs for reuse.
-- Saved presets should persist only non-sensitive configuration, never the password. A future preset model can reuse `GeneratorInput` without its credential fields.
-- Based on my experience using the EDF website, having to re-enter account details can be inconvenient. That experience also prompted a security trade-off: avoiding persistent credential storage reduces the amount of sensitive data retained, even though users lose some convenience. It does not eliminate exposure while credentials are in use or after export.
+- My experience with the EDF website showed me that entering account details again can be inconvenient. However, keeping fewer saved credentials can reduce the amount of sensitive data retained. The app does not persist credentials, but they can still be exposed while in use or after export.
+- As a future improvement, I plan to test autofill and password-saving behavior across supported browsers and reduce unwanted saving where possible. The credential fields already use `autocomplete="off"`, but browsers and password managers may ignore it. The app cannot guarantee that they will never save credentials. See [MDN: turning off form autocompletion](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion).
